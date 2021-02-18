@@ -1,9 +1,10 @@
 from typing import TypedDict
-
 from flask import Flask
 import subprocess
 
 app = Flask(__name__)
+
+TEMPERATURE_COMMAND = "vcgencmd measure_temp | egrep -o '[0-9]*\\.[0-9]*'"
 
 
 class TemperatureResponse(TypedDict):
@@ -16,7 +17,7 @@ def get_temperature() -> TemperatureResponse:
 
 
 def _get_temperature() -> float:
-    temperature = subprocess.getoutput("vcgencmd measure_temp | egrep -o '[0-9]*\\.[0-9]*'")
+    temperature = subprocess.getoutput(TEMPERATURE_COMMAND)
     return float(temperature)
 
 
