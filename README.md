@@ -14,10 +14,10 @@
 ## Usage
 
 ```sh
-python3 -m venv api
-source api/bin/activate
+python3 -m venv api_env
+source api_env/bin/activate
 pip install -r req.txt
-python3 app.py
+python app.py
 ```
 
 ## Author
