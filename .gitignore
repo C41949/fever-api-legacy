@@ -1,3 +1,5 @@
 .idea/
 api_env/
+
+*.pyc
 *.db
