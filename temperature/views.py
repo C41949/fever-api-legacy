@@ -15,6 +15,11 @@ def current_temperature() -> TemperatureResponse:
     return service.current_temperature().to_response()
 
 
+@temperatures.route('/temperature', methods=['POST'])
+def create() -> TemperatureResponse:
+    return service.create().to_response()
+
+
 @temperatures.route('/temperature', methods=['GET'])
 def list_temperatures() -> TemperatureListResponse:
     return service.list()
