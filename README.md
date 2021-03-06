@@ -12,6 +12,10 @@
 
 ## What?
 This is a summary of the project goals:
+
+---
+- [ ] Adds deploy with docker
+---
 - [x] Create an api with the following endpoints
   - [x] Get the current temperature
   - [x] Get the current temperature
