@@ -36,8 +36,6 @@ This is a summary of the project goals:
   - [ ] Adds a `Process` entity, and save the top ones at the measurement moment
 
 ## Related
-- [temperature-worker](.)
-    - 🚧
 - [temperature-dashboard](.)
     - 🚧
 

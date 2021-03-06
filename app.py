@@ -3,6 +3,7 @@ import os
 from flask import Flask
 
 from database import db, db_name
+from logs.views import logs
 from temperature.views import temperatures
 
 
@@ -11,7 +12,9 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_name}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
+
     app.register_blueprint(temperatures)
+    app.register_blueprint(logs)
     return app
 
 
