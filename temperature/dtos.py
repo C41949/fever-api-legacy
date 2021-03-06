@@ -3,6 +3,7 @@ from typing import TypedDict
 
 
 class TemperatureResponse(TypedDict):
+    id: int
     temperature: float
     date: datetime
 

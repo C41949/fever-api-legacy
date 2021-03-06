@@ -1,8 +1,10 @@
 import subprocess
 from datetime import datetime
 
+from commons import to_response as r
 from database import db
-from temperature import Temperature, TemperatureListResponse
+from temperature.dtos import TemperatureListResponse
+from temperature.models import Temperature
 
 
 class TemperatureService:
@@ -11,7 +13,7 @@ class TemperatureService:
         self._command = "vcgencmd measure_temp | egrep -o '[0-9]*\\.[0-9]*'"
 
     def list(self) -> TemperatureListResponse:
-        return {'data': [t.to_response() for t in Temperature.query.all()]}
+        return Temperature.query.all()
 
     def create(self) -> Temperature:
         temperature = self.current_temperature()

@@ -1,25 +1,24 @@
 from flask.blueprints import Blueprint
 
-from temperature import TemperatureResponse, TemperatureListResponse, TemperatureService
+from commons import to_response as r
+from temperature.dtos import TemperatureResponse, TemperatureListResponse
+from temperature.services import TemperatureService
 
-temperatures = Blueprint(
-    'temperatures',
-    __name__
-)
+temperatures = Blueprint('temperatures', __name__)
 
 service = TemperatureService()
 
 
 @temperatures.route('/temperature/current', methods=['GET'])
 def current_temperature() -> TemperatureResponse:
-    return service.current_temperature().to_response()
+    return r(service.current_temperature())
 
 
 @temperatures.route('/temperature', methods=['POST'])
 def create() -> TemperatureResponse:
-    return service.create().to_response()
+    return r(service.create())
 
 
 @temperatures.route('/temperature', methods=['GET'])
 def list_temperatures() -> TemperatureListResponse:
-    return service.list()
+    return {'data': [r(t) for t in service.list()]}
