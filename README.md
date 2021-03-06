@@ -8,8 +8,34 @@
 
 ## Why?
 
-> :construction:
+> The idea is to use this project to study Flask and related technologies.
 
+## What?
+This is a summary of the project goals:
+- [x] Create an api with the following endpoints
+  - [x] Get the current temperature
+  - [x] Get the current temperature
+  - [x] Get a list of previous temperatures
+---
+- [ ] Enhance the list endpoint
+  - [ ] Accept a date range as parameter
+  - [ ] Adapt a list of previous temperatures with a default range to prevent querying all database
+---
+- [ ] Create an endpoint to count days
+  - [ ] Count days with temperatures with specific interval
+    - ex: `param = 3`,  `response = { 50-52: { qtd: 3, data: [] }, 53-55: { qtd: 2, data: [] }  }`
+---
+- [ ] Add info about quantity of processes
+  - [ ] Adds 'quantity of processes at that moment' when temperature is measured
+---
+- [ ] Add info about quantity of processes
+  - [ ] Adds a `Process` entity, and save the top ones at the measurement moment
+
+## Related
+- [temperature-worker](.)
+    - 🚧
+- [temperature-dashboard](.)
+    - 🚧
 
 ## Usage
 
