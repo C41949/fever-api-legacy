@@ -1,7 +1,6 @@
 import subprocess
 from datetime import datetime
 
-from commons import to_response as r
 from database import db
 from temperature.dtos import TemperatureListResponse
 from temperature.models import Temperature

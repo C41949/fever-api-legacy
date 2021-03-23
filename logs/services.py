@@ -1,4 +1,3 @@
-from commons import to_response as r
 from database import db
 from logs.dtos import LogListResponse
 from logs.models import LogType, Log
