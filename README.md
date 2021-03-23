@@ -14,27 +14,23 @@
 This is a summary of the project goals:
 
 ---
-- [ ] Adds deploy with docker
+Basic structure
+- [x]  Get the current temperature
+- [x]  Create an object with the current temperature
+- [x]  Get a list of previous temperatures
 ---
-- [x] Create an api with the following endpoints
-  - [x] Get the current temperature
-  - [x] Get the current temperature
-  - [x] Get a list of previous temperatures
----
-- [ ] Enhance the list endpoint
-  - [ ] Accept a date range as parameter
-  - [ ] Adapt a list of previous temperatures with a default range to prevent querying all database
----
-- [ ] Create an endpoint to count days
-  - [ ] Count days with temperatures with specific interval
-    - ex: `param = 3`,  `response = { 50-52: { qtd: 3, data: [] }, 53-55: { qtd: 2, data: [] }  }`
----
-- [ ] Add info about quantity of processes
-  - [ ] Adds 'quantity of processes at that moment' when temperature is measured
----
-- [ ] Add info about quantity of processes
-  - [ ] Adds a `Process` entity, and save the top ones at the measurement moment
 
+Deployment
+- [ ]  Adds deploy with docker
+---
+
+Enhance the list endpoint
+- [ ]  Accept a date range as parameter
+- [ ]  Adapt a list of previous temperatures with a default range to prevent querying all database
+---
+
+Add info about quantity of processes
+- [ ]  Adds 'quantity of processes at that moment' when temperature is measured
 ## Related
 - [temperature-dashboard](.)
     - 🚧
