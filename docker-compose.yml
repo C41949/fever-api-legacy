@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+
+  temperature-api:
+    build: ./api
+    container_name: temperature-api
+    restart: always
+    environment:
+      - APP_NAME=temperature-api
+    expose:
+      - 8080
+
+  temperature-api-nginx:
+    build: ./nginx
+    container_name: temperature-api-nginx
+    restart: always
+
+networks: 
+  default:
+    external: 
+      name: guardian-network
