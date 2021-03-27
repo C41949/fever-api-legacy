@@ -1,7 +1,7 @@
-<h1 align="center">Welcome to TemperatureAPI 👋</h1>
+<h1 align="center">Welcome to fever-api :fire: </h1>
 
 <p align="center">
-  <img src="./.images/temperature.png" />
+  <img src="./.images/fever-api.png" />
 </p>
 
 > Just a study using flask for raspberry temperature monitoring
@@ -32,7 +32,7 @@ Enhance the list endpoint
 Add info about quantity of processes
 - [ ]  Adds 'quantity of processes at that moment' when temperature is measured
 ## Related
-- [temperature-dashboard](.)
+- [fever-dashboard](.)
     - 🚧
 
 ## Usage
@@ -41,7 +41,7 @@ Add info about quantity of processes
 python3 -m venv api_env
 source api_env/bin/activate
 pip install -r req.txt
-python app.py
+python wsgi.py
 ```
 
 ## Author
