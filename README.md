@@ -21,7 +21,11 @@ Basic structure
 ---
 
 Deployment
-- [ ]  Adds deploy with docker
+- [x]  Adds deploy with docker
+---
+
+Database
+- [ ] Adds a real database, PostgreSQL or similar
 ---
 
 Enhance the list endpoint
