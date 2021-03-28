@@ -9,7 +9,7 @@ from temperature.models import Temperature
 class TemperatureService:
 
     def __init__(self):
-        self._command = "vcgencmd measure_temp | egrep -o '[0-9]*\\.[0-9]*'"
+        self._command = 'cat /sys/class/thermal/thermal_zone0/temp'
 
     def list(self) -> TemperatureListResponse:
         return Temperature.query.all()
@@ -24,4 +24,4 @@ class TemperatureService:
         return Temperature(temperature=self._current_temperature(), date=datetime.now())
 
     def _current_temperature(self) -> float:
-        return float(subprocess.getoutput(self._command))
+        return float(subprocess.getoutput(self._command)) / 1000
