@@ -37,6 +37,15 @@ Add info about quantity of processes
 
 ## Usage
 
+Coding
+```sh
+python3 -m venv api_env
+source api_env/bin/activate
+pip install -r req.txt
+python wsgi.py
+```
+
+Deploy
 ```sh
 make measure
 ```

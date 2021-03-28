@@ -2,21 +2,28 @@ version: "3.7"
 
 services:
 
-  temperature-api:
+  fever-api:
     build: ./api
-    container_name: temperature-api
+    container_name: fever-api
     restart: always
-    environment:
-      - APP_NAME=temperature-api
     expose:
       - 8080
 
   temperature-api-nginx:
     build: ./nginx
-    container_name: temperature-api-nginx
+    container_name: fever-api-nginx
+    depends_on:
+      - fever-api
     restart: always
 
-networks: 
+  fever-worker:
+    build: ./worker
+    container_name: fever-worker
+    restart: always
+    depends_on:
+      - fever-api
+
+networks:
   default:
     external: 
       name: guardian-network
