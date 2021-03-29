@@ -6,11 +6,11 @@
 
 > Just a study using flask for raspberry temperature monitoring
 
-## Why?
+## Why ❓
 
 > The idea is to use this project to study Flask and related technologies.
 
-## What?
+## Roadmap 🗺️
 This is a summary of the project goals:
 
 ---
@@ -47,8 +47,7 @@ Add cached default endpoints
 ---
 
 ## Related
-- [fever-dashboard](.)
-    - 🚧
+- [🚒 fever-dashboard](https://github.com/C41949/fever-dashboard)
 
 ## Usage
 
