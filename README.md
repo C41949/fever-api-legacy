@@ -35,6 +35,17 @@ Enhance the list endpoint
 
 Add info about quantity of processes
 - [ ]  Adds 'quantity of processes at that moment' when temperature is measured
+---
+
+Add cached default endpoints
+
+- [ ]  Last hour
+- [ ]  Last 24 hours
+- [ ]  Last week
+- [ ]  Last month
+- [ ]  Average values for each one
+---
+
 ## Related
 - [fever-dashboard](.)
     - 🚧
