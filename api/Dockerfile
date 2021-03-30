@@ -4,10 +4,7 @@ RUN apk add --virtual .build-dependencies \
             python3-dev \
             postgresql-libs \ 
             musl-dev \
-            linux-headers \
-            pcre-dev
-
-RUN apk add --no-cache pcre
+            linux-headers
 
 WORKDIR /app
 COPY . /app
