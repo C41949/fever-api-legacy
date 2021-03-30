@@ -1,7 +1,6 @@
 version: "3.7"
 
 services:
-
   fever-api:
     build: ./api
     container_name: fever-api
@@ -23,7 +22,18 @@ services:
     depends_on:
       - fever-api
 
+  fever-database:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=temperature
+    volumes:
+      - /home/pi/backup/PostgreSQLVolume:/var/lib/postgresql/data
+    expose:
+      - 5432
+
 networks:
   default:
-    external: 
+    external:
       name: guardian-network
