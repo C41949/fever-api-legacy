@@ -24,6 +24,7 @@ services:
 
   fever-database:
     image: postgres:13-alpine
+    container_name: fever-database
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
