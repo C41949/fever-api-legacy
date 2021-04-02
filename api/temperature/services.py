@@ -12,7 +12,8 @@ class TemperatureService:
         self._command = 'cat /sys/class/thermal/thermal_zone0/temp'
 
     def list(self) -> TemperatureListResponse:
-        return Temperature.query.all()
+        # TODO Temporary fix
+        return Temperature.query.limit(300).all()
 
     def create(self) -> Temperature:
         temperature = self.current_temperature()
