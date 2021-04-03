@@ -14,6 +14,8 @@ services:
     depends_on:
       - fever-api
     restart: always
+    ports:
+    - 80:80
 
   fever-worker:
     build: ./worker

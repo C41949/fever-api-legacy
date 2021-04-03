@@ -25,12 +25,12 @@ Deployment
 ---
 
 Database
-- [ ] Adds a real database, PostgreSQL or similar
+- [x] Adds a real database, PostgreSQL or similar
 ---
 
 Enhance the list endpoint
-- [ ]  Accept a date range as parameter
-- [ ]  Adapt a list of previous temperatures with a default range to prevent querying all database
+- [x]  Accept a date range as parameter
+- [x]  Adapt a list of previous temperatures with a default range to prevent querying all database
 ---
 
 Add info about quantity of processes
