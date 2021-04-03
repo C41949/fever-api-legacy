@@ -8,7 +8,7 @@ services:
     expose:
       - 8080
 
-  temperature-api-nginx:
+  fever-api-nginx:
     build: ./nginx
     container_name: fever-api-nginx
     depends_on:

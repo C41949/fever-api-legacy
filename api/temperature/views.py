@@ -1,3 +1,4 @@
+from flask import request
 from flask.blueprints import Blueprint
 
 from commons import to_response as r
@@ -21,4 +22,4 @@ def create() -> TemperatureResponse:
 
 @temperatures.route('/temperature', methods=['GET'])
 def list_temperatures() -> TemperatureListResponse:
-    return {'data': [r(t) for t in service.list()]}
+    return {'data': [r(t) for t in service.list(service.build_filter(request))]}

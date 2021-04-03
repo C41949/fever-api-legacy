@@ -10,3 +10,8 @@ class TemperatureResponse(TypedDict):
 
 class TemperatureListResponse(TypedDict):
     data: list[TemperatureResponse]
+
+
+class ListFilter(TypedDict):
+    start: str
+    end: str
