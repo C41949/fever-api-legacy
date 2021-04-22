@@ -1,16 +1,18 @@
+import os
+
 from flask import Flask
 
-from database import db
+from database import db, dev_db, prod_db
 from logs.views import logs
 from temperature.views import temperatures
 
 application = Flask(__name__)
-application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@fever-database:5432/temperature'
-application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 application.register_blueprint(temperatures)
 application.register_blueprint(logs)
 
+is_dev = os.getenv('mode', 'dev') == 'dev'
+application.config['SQLALCHEMY_DATABASE_URI'] = dev_db if is_dev else prod_db
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(application)
 
 with application.app_context():
@@ -19,4 +21,8 @@ with application.app_context():
 
 @application.route("/")
 def index():
-    return 'Hi!'
+    return 'Up and running 🚀'
+
+
+if is_dev:
+    application.run(debug=True)

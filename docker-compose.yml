@@ -5,6 +5,8 @@ services:
     build: ./api
     container_name: fever-api
     restart: always
+    environment:
+      - mode=prod
     expose:
       - 8080
 
